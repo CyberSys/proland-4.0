@@ -7,9 +7,9 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="..\..\..\output\examples\core\helloworldd" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="examples\helloworld" />
-				<Option object_output="..\..\..\build\Debug\examples\helloworld" />
+				<Option output="../../../output/examples/core/helloworldd" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="examples/helloworld" />
+				<Option object_output="../../../build/Debug/examples/helloworld" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -18,12 +18,13 @@
 				<Linker>
 					<Add library="ork3d" />
 					<Add library="proland-core-4_0d" />
+					<Add library="AntTweakBar" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="..\..\..\output\examples\core\helloworld" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="examples\helloworld" />
-				<Option object_output="..\..\..\build\Release\examples\helloworld" />
+				<Option output="../../../output/examples/core/helloworld" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="examples/helloworld" />
+				<Option object_output="../../../build/Release/examples/helloworld" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -37,7 +38,6 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-march=i686" />
 			<Add option="-pedantic-errors" />
 			<Add option="-pedantic" />
 			<Add option="-Wall" />
@@ -49,14 +49,13 @@
 			<Add option="-DTIXML_USE_STL" />
 			<Add option="-DSTBI_NO_STDIO" />
 			<Add option="-DSTBI_NO_WRITE" />
-			<Add directory="$(#ork3.include)" />
-			<Add directory="$(#ork3.extern)" />
-			<Add directory="$(#twbar.include)" />
-			<Add directory="..\..\sources" />
+			<Add directory="../../sources" />
+			<Add directory="../../../../3rdparty/ork3" />
+			<Add directory="../../../../3rdparty/ork3/libraries" />
+			<Add directory="../../../../3rdparty/AntTweakBar/include" />
 		</Compiler>
 		<Linker>
-			<Add directory="$(#ork3.lib)" />
-			<Add directory="..\..\..\output\bin" />
+			<Add directory="../../../output/bin" />
 		</Linker>
 		<Unit filename="HelloWorld.cpp" />
 		<Unit filename="helloworld.xml" />
